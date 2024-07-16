@@ -1,8 +1,14 @@
-const Sequelize = require("sequelize");
+const mongodb = require("mongodb");
+const MongoClient = mongodb.MongoClient;
 
-const sequelize = new Sequelize("node-shopify-app", "root", "HeeraRam@12", {
-  dialect: "mysql",
-  host: "localhost",
-});
+const mongoConnect = (cb) => {
+  MongoClient.connect(
+    "mongodb+srv://ykkmec_dev:devsenaykkmec@personalprojects.fj7izd2.mongodb.net/?retryWrites=true&w=majority&appName=PersonalProjects"
+  )
+    .then((client)=>{
+      cb(client);
+    })
+    .catch();
+};
 
-module.exports = sequelize;
+module.exports = mongoConnect;

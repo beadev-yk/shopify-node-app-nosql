@@ -4,6 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const { Error404 } = require("./controllers/error");
+const mongoConnect = require("./util/database");
 
 const app = express();
 
@@ -23,4 +24,8 @@ app.use(shopRoutes);
 
 app.use(Error404);
 
-app.listen(3000, () => console.log(`server running on 3000`));
+mongoConnect((client) => {
+  
+  app.listen(3000, () => console.log(`server running on 3000`));
+});
+

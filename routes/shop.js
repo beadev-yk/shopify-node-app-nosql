@@ -14,20 +14,20 @@ const {
 
 const router = express.Router();
 
-router.get("/", getIndex);
+router.get("/");
 
-router.get("/products", getProducts);
+router.get("/products");
 
-router.get("/products/:id", getProductDetails);
+router.get("/products/:id");
 
-router.get("/cart", getCart);
+router.get("/cart");
 
-router.post("/cart", addProductToCart);
+router.post("/cart");
 
-router.post("/cart-delete", deleteProductFromCart);
+router.post("/cart-delete");
 
-router.post("/create-order", createOrder);
+router.post("/create-order");
 
-router.get("/orders", getOrders);
+router.get("/orders");
 
 module.exports = router;
