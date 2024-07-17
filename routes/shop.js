@@ -4,7 +4,6 @@ const {
   getProducts,
   getIndex,
   getCart,
-  getCheckout,
   getOrders,
   getProductDetails,
   addProductToCart,
@@ -14,20 +13,20 @@ const {
 
 const router = express.Router();
 
-router.get("/");
+router.get("/", getIndex);
 
-router.get("/products");
+router.get("/products", getProducts);
 
-router.get("/products/:id");
+router.get("/products/:id", getProductDetails);
 
-router.get("/cart");
+router.get("/cart", getCart);
 
-router.post("/cart");
+router.post("/cart", addProductToCart);
 
-router.post("/cart-delete");
+router.post("/cart-delete", deleteProductFromCart);
 
-router.post("/create-order");
+router.post("/create-order", createOrder);
 
-router.get("/orders");
+router.get("/orders", getOrders);
 
 module.exports = router;

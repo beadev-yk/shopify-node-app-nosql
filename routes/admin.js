@@ -12,16 +12,16 @@ const {
 
 const router = express.Router();
 
-router.get("/add-product");
+router.get("/add-product", getAddProduct);
 
-router.get("/products");
+router.get("/products", getProducts);
 
-router.post("/add-product");
+router.post("/add-product", addNewProduct);
 
-router.get("/edit-product/:productId");
+router.get("/edit-product/:productId", getEditProduct);
 
-router.post("/edit-product");
+router.post("/edit-product", postEditProduct);
 
-router.post("/delete-product");
+router.post("/delete-product", postDeleteProduct);
 
 module.exports = router;
